@@ -1,5 +1,5 @@
 {% set name = "async_lru" %}
-{% set version = "1.0.3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name.replace("_", "-") }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz
-  sha256: c2cb9b2915eb14e6cf3e717154b40f715bf90e596d73623677affd0d1fbcd32a
+  sha256: 40b0014602172e9a45b83f53591881490abd9b545c4f9fa94242a916ec7cd112
 
 build:
   number: 0
