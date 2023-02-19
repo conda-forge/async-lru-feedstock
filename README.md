@@ -1,7 +1,7 @@
 About async-lru
 ===============
 
-Home: https://github.com/wikibusiness/async_lru
+Home: https://github.com/aio-libs/async_lru
 
 Package license: MIT
 
