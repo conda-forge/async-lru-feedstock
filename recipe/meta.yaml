@@ -11,10 +11,7 @@ source:
 build:
   number: 0
   noarch: python
-  script:
-    # TODO: remove after https://github.com/aio-libs/async-lru/pull/472
-    - {{ PYTHON }} -m pip install . -vv
-    - {{ PYTHON }} -c "(__import__('pathlib').Path(__import__('os').environ['SP_DIR']) / 'async_lru/py.typed').touch()"
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
