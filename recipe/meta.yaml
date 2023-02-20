@@ -1,4 +1,4 @@
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: async-lru
@@ -6,12 +6,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/async_lru/async-lru-{{ version }}.tar.gz
-  sha256: 40b0014602172e9a45b83f53591881490abd9b545c4f9fa94242a916ec7cd112
+  sha256: 2bba4fe007a7da40a8da0388a370e2beae2f602edef12b2e705ae4c781d0fc31
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: 
+    # TODO: remove after https://github.com/aio-libs/async-lru/pull/472
+    - {{ PYTHON }} -m pip install . -vv
+    - {{ PYTHON }} -c "(__import__('pathlib').Path(__import__('os').environ['SP_DIR']) / 'async_lru/py.typed').touch()"
 
 requirements:
   host:
@@ -26,8 +29,10 @@ test:
     - async_lru
   commands:
     - pip check
+    - mypy -m async_lru
   requires:
     - pip
+    - mypy
 
 about:
   home: https://github.com/aio-libs/async_lru
