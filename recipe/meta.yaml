@@ -26,8 +26,10 @@ test:
     - async_lru
   commands:
     - pip check
+    - mypy -m async_lru
   requires:
     - pip
+    - mypy
 
 about:
   home: https://github.com/aio-libs/async_lru
