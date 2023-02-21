@@ -33,6 +33,7 @@ test:
   requires:
     - mypy
     - pip
+    - pytest-asyncio
     - pytest-cov
 
 about:
