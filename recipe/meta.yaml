@@ -1,4 +1,4 @@
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: async-lru
@@ -6,15 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/async_lru/async-lru-{{ version }}.tar.gz
-  sha256: 2bba4fe007a7da40a8da0388a370e2beae2f602edef12b2e705ae4c781d0fc31
+  sha256: 3b87ec4f2460c52cc7916a0138cc606b584c75d1ef7d661853c95d1d3acb869a
 
 build:
   number: 0
   noarch: python
-  script: 
-    # TODO: remove after https://github.com/aio-libs/async-lru/pull/472
-    - {{ PYTHON }} -m pip install . -vv
-    - {{ PYTHON }} -c "(__import__('pathlib').Path(__import__('os').environ['SP_DIR']) / 'async_lru/py.typed').touch()"
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
@@ -25,17 +22,22 @@ requirements:
     - typing_extensions >=4.0.0
 
 test:
+  source_files:
+    - tests
   imports:
     - async_lru
   commands:
     - pip check
     - mypy -m async_lru
+    - pytest -vv --asyncio-mode=auto --cov=async_lru --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90
   requires:
-    - pip
     - mypy
+    - pip
+    - pytest-asyncio
+    - pytest-cov
 
 about:
-  home: https://github.com/aio-libs/async_lru
+  home: https://github.com/aio-libs/async-lru
   summary: Simple lru_cache for asyncio
   license: MIT
   license_file: LICENSE
