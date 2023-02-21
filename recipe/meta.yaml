@@ -22,17 +22,21 @@ requirements:
     - typing_extensions >=4.0.0
 
 test:
+  source_files:
+    - tests
   imports:
     - async_lru
   commands:
     - pip check
     - mypy -m async_lru
+    - pytest -vv --cov=async_lru --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=100
   requires:
-    - pip
     - mypy
+    - pip
+    - pytest-cov
 
 about:
-  home: https://github.com/aio-libs/async_lru
+  home: https://github.com/aio-libs/async-lru
   summary: Simple lru_cache for asyncio
   license: MIT
   license_file: LICENSE
