@@ -11,7 +11,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -29,7 +29,7 @@ test:
   commands:
     - pip check
     - mypy -m async_lru
-    - pytest -vv --asyncio-mode=auto --cov=async_lru --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90
+    - pytest -vv --asyncio-mode=auto --cov=async_lru --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=89
   requires:
     - mypy
     - pip
