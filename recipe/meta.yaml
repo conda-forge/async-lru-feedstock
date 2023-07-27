@@ -1,4 +1,4 @@
-{% set version = "2.0.3" %}
+{% set version = "2.0.4" %}
 
 package:
   name: async-lru
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/async_lru/async-lru-{{ version }}.tar.gz
-  sha256: b714c9d1415fca4e264da72a9e2abc66880ce7430e03a973341f88ea4c0d4869
+  sha256: b8a59a5df60805ff63220b2a0c5b5393da5521b113cd5465a44eb037d81a5627
 
 build:
   number: 0
