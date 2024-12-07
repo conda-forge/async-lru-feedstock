@@ -5,20 +5,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/async_lru/async-lru-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/async_lru/async-lru-{{ version }}.tar.gz
   sha256: b8a59a5df60805ff63220b2a0c5b5393da5521b113cd5465a44eb037d81a5627
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - typing_extensions >=4.0.0
 
 test:
@@ -35,6 +35,7 @@ test:
     - pip
     - pytest-asyncio
     - pytest-cov
+    - python {{ python_min }}
 
 about:
   home: https://github.com/aio-libs/async-lru
