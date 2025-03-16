@@ -1,15 +1,15 @@
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 
 package:
   name: async-lru
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/a/async_lru/async-lru-{{ version }}.tar.gz
-  sha256: b8a59a5df60805ff63220b2a0c5b5393da5521b113cd5465a44eb037d81a5627
+  url: https://pypi.org/packages/source/a/async_lru/async_lru-{{ version }}.tar.gz
+  sha256: 481d52ccdd27275f42c43a928b4a50c3bfb2d67af4e78b170e3e0bb39c66e5bb
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
