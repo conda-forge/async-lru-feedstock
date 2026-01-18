@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 2.0.5
+  version: "2.1.0"
 
 package:
   name: async-lru
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/async_lru/async_lru-${{ version }}.tar.gz
-  sha256: 481d52ccdd27275f42c43a928b4a50c3bfb2d67af4e78b170e3e0bb39c66e5bb
+  sha256: 9eeb2fecd3fe42cc8a787fc32ead53a3a7158cc43d039c3c55ab3e4e5b2a80ed
 
 build:
   number: 0
