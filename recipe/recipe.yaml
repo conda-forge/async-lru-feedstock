@@ -52,7 +52,8 @@ about:
   summary: Simple lru_cache for asyncio
   license: MIT
   license_file: LICENSE
-  homepage: https://github.com/aio-libs/async-lru
+  homepage: https://pypi.org/project/async-lru
+  repository: https://github.com/aio-libs/async-lru
 
 extra:
   recipe-maintainers:
