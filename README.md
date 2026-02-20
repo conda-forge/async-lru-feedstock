@@ -3,11 +3,13 @@ About async-lru-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/async-lru-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/aio-libs/async-lru
+Home: https://pypi.org/project/async-lru
 
 Package license: MIT
 
 Summary: Simple lru_cache for asyncio
+
+Development: https://github.com/aio-libs/async-lru
 
 Current build status
 ====================
