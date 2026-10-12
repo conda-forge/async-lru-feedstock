@@ -17,7 +17,7 @@ build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -26,9 +26,13 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
-    - typing_extensions >=4.0.0
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - async_lru/**
+        - async_lru-${{ version }}.dist-info/**
   - python:
       imports: async_lru
       python_version:
@@ -36,7 +40,7 @@ tests:
         - ${{ python_check_max }}.*
   - files:
       source:
-        - tests/
+        - tests/**
     requirements:
       run:
         - mypy
