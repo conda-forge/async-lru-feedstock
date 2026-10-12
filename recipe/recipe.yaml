@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.3.0"
+  version: "2.4.0"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/async_lru/async_lru-${{ version }}.tar.gz
-  sha256: 89bdb258a0140d7313cf8f4031d816a042202faa61d0ab310a0a538baa1c24b6
+  sha256: b0b0077d9b7596615b3c12d0aad4f6aeccaaa0ac75ceae472608ede89e764c08
 
 build:
   number: 0
